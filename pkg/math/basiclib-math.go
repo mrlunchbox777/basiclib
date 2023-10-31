@@ -1,9 +1,9 @@
 /**
  * Author: Andrew Shoell
- * File: basiclib.go
+ * File: basiclib-math.go
  */
 
-package basiclib
+package math
 
 // Returns the sum of two numbers
 func Add(a int, b int) int {

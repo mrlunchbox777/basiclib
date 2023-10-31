@@ -3,12 +3,12 @@
  * File: init.go
  */
 
-package basiclib
+package pkg
 
 import (
 	"fmt"
 )
 
 func init() {
-	fmt.Println("[basiclib] initializing ...")
+	fmt.Println("[basiclib/pkg] initializing ...")
 }

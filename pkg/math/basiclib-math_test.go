@@ -1,9 +1,9 @@
 /**
  * Author: Andrew Shoell
- * File: basiclib_test.go
+ * File: basiclib-math_test.go
  */
 
-package basiclib
+package math
 
 import (
 	"testing"
