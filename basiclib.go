@@ -1,6 +1,6 @@
 /**
  * Author: Andrew Shoell
- * File: go-lib.go
+ * File: basiclib.go
  */
 
 package basiclib
