@@ -1,6 +1,6 @@
 /**
  * Author: Andrew Shoell
- * File: basiclib-math_test.go
+ * File: arithmatic_test.go
  */
 
 package math
@@ -9,6 +9,7 @@ import (
 	"testing"
 )
 
+// TestAdd tests that Add returns the sum of two numbers
 func TestAdd(t *testing.T) {
 	a := 1
 	b := 2
@@ -19,6 +20,7 @@ func TestAdd(t *testing.T) {
 	}
 }
 
+// TestSubtract tests that Subtract returns the difference between two numbers
 func TestSubtract(t *testing.T) {
 	a := 1
 	b := 2

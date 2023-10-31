@@ -1,6 +1,6 @@
 /**
  * Author: Andrew Shoell
- * File: basiclib-math.go
+ * File: arithmatic.go
  */
 
 package math
