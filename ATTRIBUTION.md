@@ -1,1 +1,1 @@
-[See docs/ATTRIBUTION](/docs/ATTRIBUTION)
+[See docs/ATTRIBUTION.md](/docs/ATTRIBUTION.md)
