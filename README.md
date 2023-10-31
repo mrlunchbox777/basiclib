@@ -7,7 +7,7 @@ Some common go functionality strapped into a library.
 ### Initialize your module
 
 ```sh
-go mod init example.com/my-golib-demo
+go mod init example.com/my-basiclib-demo
 ```
 
 ### Get the go-lib module
@@ -30,8 +30,8 @@ import (
 )
 
 func main() {
-    fmt.Println(golib.Add(2,3))
-    fmt.Println(golib.Subtract(2,3))
+    fmt.Println(basiclib.Add(2,3))
+    fmt.Println(basiclib.Subtract(2,3))
 }
 ```
 

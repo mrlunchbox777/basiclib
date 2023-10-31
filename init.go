@@ -10,5 +10,5 @@ import (
 )
 
 func init() {
-	fmt.Println("[basic-lib] initializing ...")
+	fmt.Println("[basiclib] initializing ...")
 }
