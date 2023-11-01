@@ -19,6 +19,7 @@ ERROR=0
 	echo "Cleaning $PACKAGE_DIR..."
 	go clean
 	rm -rf "$PACKAGE_DIR/bin"
+	git clean -f -d -x
 } || {
 	ERROR=$?
 }
