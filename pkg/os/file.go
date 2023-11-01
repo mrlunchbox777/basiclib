@@ -11,7 +11,7 @@ import (
 	flow "github.com/mrlunchbox777/basiclib/pkg/flow"
 )
 
-// ReadFile reads a file and returns its contents, panics on error
+// ReadArbitraryFile reads a file and returns its contents, panics on error
 func ReadArbitraryFile(path string) []byte {
 	d, err := os.ReadFile(path)
 	flow.MustNot(err)
