@@ -14,10 +14,11 @@ import (
 )
 
 var myExec = exec.Command
+var myRuntime = runtime.GOOS
 
 func OpenBrowser(url string) {
 	var err error
-	switch runtime.GOOS {
+	switch myRuntime {
 	case "linux":
 		err = myExec("xdg-open", url).Start()
 	case "windows":
