@@ -22,3 +22,6 @@ go.work
 
 # Build output
 pkg/bin/
+
+# Test files
+test.*
