@@ -23,9 +23,6 @@ var MockArgs []FakeExecCommand
 
 // CreateFakeExecCommand mocks exec.Command with a unique id and appends it to MockArgs so it can be checked later
 func CreateFakeExecCommand(uniqueId string) func(command string, args ...string) *exec.Cmd {
-	if MockArgs == nil {
-		MockArgs = make([]FakeExecCommand, 0)
-	}
 	if uniqueId == "" {
 		uniqueId = "default"
 	}
