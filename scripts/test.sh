@@ -17,7 +17,7 @@ ERROR=0
 
 	# Run tests
 	echo "Running tests in $PACKAGE_DIR..."
-	go test -v -coverprofile=coverage.out -coverpkg=./... ./...
+	go test -v -cover ./...
 } || {
 	ERROR=$?
 }
