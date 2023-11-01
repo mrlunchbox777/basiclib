@@ -14,6 +14,7 @@ import (
 
 var path = "test.txt"
 
+// Cleanup removes the test file
 func Cleanup() {
 	if Exists(path) {
 		Remove(path)
@@ -29,6 +30,7 @@ func TestReadArbitraryFile(t *testing.T) {
 	WriteFile(path, []byte(content), os.FileMode(perms))
 
 	if got := string(ReadArbitraryFile(path)); got != content {
+		Cleanup()
 		t.Errorf("ReadArbitraryFile(%s) = %s, didn't return %s", path, got, content)
 	}
 	Cleanup()
@@ -40,6 +42,7 @@ func TestReadArbitraryFilePanic(t *testing.T) {
 
 	defer func() {
 		if r := recover(); r == nil {
+			Cleanup()
 			t.Errorf("ReadArbitraryFile(%s) should have panicked", path)
 		}
 	}()
@@ -56,6 +59,7 @@ func TestReadTextFile(t *testing.T) {
 	WriteFile(path, []byte(content), os.FileMode(perms))
 
 	if got := ReadTextFile(path); got != content {
+		Cleanup()
 		t.Errorf("ReadTextFile(%s) = %s, didn't return %s", path, got, content)
 	}
 	Cleanup()
@@ -67,6 +71,7 @@ func TestReadTextFilePanic(t *testing.T) {
 
 	defer func() {
 		if r := recover(); r == nil {
+			Cleanup()
 			t.Errorf("ReadTextFile(%s) should have panicked", path)
 		}
 	}()
@@ -83,6 +88,7 @@ func TestReadFile(t *testing.T) {
 	WriteFile(path, []byte(content), os.FileMode(perms))
 
 	if got := ReadFile(path); got != content {
+		Cleanup()
 		t.Errorf("ReadFile(%s) = %s, didn't return %s", path, got, content)
 	}
 	Cleanup()
@@ -94,6 +100,7 @@ func TestReadFilePanic(t *testing.T) {
 
 	defer func() {
 		if r := recover(); r == nil {
+			Cleanup()
 			t.Errorf("ReadFile(%s) should have panicked", path)
 		}
 	}()
@@ -110,6 +117,7 @@ func TestWriteFile(t *testing.T) {
 	WriteFile(path, []byte(content), os.FileMode(perms))
 
 	if got := string(ReadArbitraryFile(path)); got != content {
+		Cleanup()
 		t.Errorf("WriteFile(%s, %s, %d) = %s, didn't return %s", path, content, perms, got, content)
 	}
 	Cleanup()
@@ -124,6 +132,7 @@ func TestWriteFilePanic(t *testing.T) {
 
 	defer func() {
 		if r := recover(); r == nil {
+			Cleanup()
 			t.Errorf("WriteFile(%s, %s, %d) should have panicked", badPath, content, perms)
 		}
 	}()
@@ -141,6 +150,7 @@ func TestRemove(t *testing.T) {
 	Remove(path)
 	_, err := os.Stat(path)
 	if !os.IsNotExist(err) {
+		Cleanup()
 		t.Errorf("Remove(%s) didn't remove the file", path)
 	}
 }
@@ -152,6 +162,7 @@ func TestRemovePanic(t *testing.T) {
 
 	defer func() {
 		if r := recover(); r == nil {
+			Cleanup()
 			t.Errorf("Remove(%s) should have panicked", badPath)
 		}
 	}()
@@ -167,6 +178,7 @@ func TestExists(t *testing.T) {
 	expected := false
 
 	if got := Exists(path); got != expected {
+		Cleanup()
 		t.Errorf("Exists(%s) = %t, didn't return %t", path, got, expected)
 	}
 
@@ -174,6 +186,7 @@ func TestExists(t *testing.T) {
 	expected = true
 
 	if got := Exists(path); got != expected {
+		Cleanup()
 		t.Errorf("Exists(%s) = %t, didn't return %t", path, got, expected)
 	}
 }

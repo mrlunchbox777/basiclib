@@ -10,6 +10,10 @@ test:
 	@echo "make testing..."
 	./scripts/test.sh
 
+coverage:
+	@echo "make coverage..."
+	./scripts/coverage.sh
+
 clean:
 	@echo "make cleaning..."
 	./scripts/clean.sh

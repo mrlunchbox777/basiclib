@@ -26,3 +26,19 @@ func TestLogf(t *testing.T) {
 		t.Errorf("Logf() = \"%s\", didn't return \"%s\"", got, expected)
 	}
 }
+
+// TestLogfFormatted tests that Logf logs a formatted message to stdout
+func TestLogfFormatted(t *testing.T) {
+	expected := "Hello, World!"
+	got, err := os.CaptureOutput(func() error {
+		Logf("Hello, %s!", "World")
+		return nil
+	})
+
+	if err != nil {
+		t.Errorf("Logf() returned an error: %s", err)
+	}
+	if got != expected {
+		t.Errorf("Logf() = \"%s\", didn't return \"%s\"", got, expected)
+	}
+}
